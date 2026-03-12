@@ -1,0 +1,54 @@
+body {
+  font-family: 'Inter', sans-serif;
+  color: #1e293b;
+  scroll-behavior: smooth;
+}
+#navbar {
+  background: rgba(10, 22, 50, 0.97) !important;
+  padding: 0.6rem 0;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  transition: background 0.4s, padding 0.4s;
+}
+
+#navbar.transparent {
+  background: transparent !important;
+  padding: 1rem 0;
+  box-shadow: none;
+}
+
+.brand-name {
+  font-size: 1.3rem;
+  color: #fff;
+  font-weight: 600;
+}
+
+.brand-name strong {
+  font-weight: 800;
+}
+
+.nav-link {
+  color: rgba(255, 255, 255, 0.85) !important;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: #00cfff !important;
+}
+
+/* ── HERO ── */
+#home {
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background: url('images/hero_srilanka.png') center/cover no-repeat;
+  animation: zoomIn 18s infinite alternate;
+}
