@@ -52,3 +52,79 @@ body {
   background: url('images/hero_srilanka.png') center/cover no-repeat;
   animation: zoomIn 18s infinite alternate;
 }
+
+/* ── DESTINATION CARDS ── */
+.dest-card {
+  border-radius: 20px !important;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 4px 16px rgba(15, 40, 90, 0.08);
+}
+
+.dest-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 50px rgba(15, 40, 90, 0.16);
+}
+
+.card-img-wrap {
+  position: relative;
+  overflow: hidden;
+  height: 220px;
+}
+
+.card-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.dest-card:hover .card-img-wrap img {
+  transform: scale(1.08);
+}
+
+.img-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 25, 70, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.dest-card:hover .img-overlay {
+  opacity: 1;
+}
+
+.card-badge-lbl {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 0.28rem 0.7rem;
+  border-radius: 50px;
+  z-index: 2;
+}
+
+.badge-blue {
+  background: linear-gradient(135deg, #1a6ef5, #0d50c7);
+  color: #fff;
+}
+
+.badge-gold {
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+  color: #fff;
+}
+
+.badge-green {
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: #fff;
+}
+
+.badge-purple {
+  background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+  color: #fff;
+}
