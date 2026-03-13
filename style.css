@@ -50,7 +50,7 @@ body {
   position: absolute;
   inset: 0;
   background: url('images/hero_srilanka.png') center/cover no-repeat;
-  animation: zoomIn 18s infinite alternate;
+ 
 }
 
 /* ── DESTINATION CARDS ── */
