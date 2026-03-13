@@ -355,3 +355,105 @@ body {
 .login-success.show {
   display: flex;
 }
+/* ── OFFERS SECTION ── */
+.offer-card {
+  border-radius: 24px;
+  overflow: hidden;
+  background: #fff;
+  border: none;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s, box-shadow 0.3s;
+  height: 100%;
+  position: relative;
+}
+
+.offer-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(15, 40, 90, 0.12);
+}
+
+.offer-badge {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: #ef4444;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  z-index: 5;
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+}
+
+.offer-img-wrap {
+  height: 250px;
+  overflow: hidden;
+}
+
+.offer-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.old-price {
+  text-decoration: line-through;
+  color: #94a3b8;
+  font-size: 0.9rem;
+  margin-right: 0.5rem;
+}
+
+.offer-expiry {
+  font-size: 0.8rem;
+  color: #ef4444;
+  font-weight: 600;
+}
+
+.rating-pill {
+  background: #e8f0fe;
+  color: #0d50c7;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.2rem 0.6rem;
+  border-radius: 50px;
+}
+
+.dest-desc {
+  font-size: 0.87rem;
+  color: #475569;
+  line-height: 1.6;
+}
+
+.card-tag {
+  background: #f1f5f9;
+  color: #64748b;
+  font-size: 0.72rem;
+  padding: 0.18rem 0.6rem;
+  border-radius: 50px;
+}
+
+.price-val {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #1a6ef5;
+}
+
+.price-small {
+  font-size: 0.72rem;
+  color: #94a3b8;
+}
+
+.btn-blue {
+  background: linear-gradient(135deg, #1a6ef5, #0d50c7);
+  color: #fff;
+  border: none;
+  font-weight: 600;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn-blue:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(26, 110, 245, 0.35);
+  color: #fff;
+}
