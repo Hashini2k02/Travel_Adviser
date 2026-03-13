@@ -53,6 +53,80 @@ body {
  
 }
 
+@keyframes zoomIn {
+  from {
+    transform: scale(1.0);
+  }
+
+  to {
+    transform: scale(1.08);
+  }
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(5, 15, 45, 0.55) 0%, rgba(5, 15, 45, 0.75) 100%);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-badge {
+  display: inline-block;
+  background: rgba(0, 207, 255, 0.15);
+  border: 1px solid rgba(0, 207, 255, 0.5);
+  color: #00cfff;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.35rem 1rem;
+  border-radius: 50px;
+}
+
+.hero-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.4rem, 5.5vw, 4.2rem);
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.15;
+}
+
+.hero-title span {
+  background: linear-gradient(135deg, #00cfff, #a78bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-sub {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.05rem;
+}
+
+/* ── SECTION SHARED ── */
+.section-badge {
+  display: inline-block;
+  background: #e8f0fe;
+  color: #1a6ef5;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.3rem 1rem;
+  border-radius: 50px;
+}
+
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  font-weight: 800;
+}
+
+
 /* ── DESTINATION CARDS ── */
 .dest-card {
   border-radius: 20px !important;
