@@ -1,0 +1,314 @@
+<?php include 'session_check.php'; ?>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Travel Adviser Sri Lanka – Contact us for your next adventure." />
+    <title>Contact Us | Travel Adviser – Sri Lanka 🇱🇰</title>
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@700;800&display=swap"
+        rel="stylesheet" />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <!-- ========== NAVBAR ========== -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="navbar" style="background: rgba(10, 22, 50, 0.95);">
+        <div class="container">
+            <!-- Brand -->
+            <a href="index.php" class="navbar-brand">
+                <span class="brand-name">
+                    <i class="bi bi-airplane-fill text-info me-2"></i>Travel <strong>Adviser</strong> 🇱🇰
+                </span>
+            </a>
+            <!-- Mobile toggle -->
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Links -->
+            <div class="collapse navbar-collapse justify-content-end" id="navMenu">
+                <ul class="navbar-nav gap-lg-1 align-items-lg-center">
+                    <li class="nav-item"><a class="nav-link" href="index.php">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="destination.php">Destinations</a></li>
+                    <li class="nav-item"><a class="nav-link" href="offers.php">Offers</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="contact.php">Contact</a></li>
+                    <li class="nav-item ms-lg-3">
+                        <?php if ($isLoggedIn): ?>
+                            <div class="dropdown">
+                                <button class="btn btn-info btn-sm rounded-pill px-4 fw-bold dropdown-toggle" type="button" id="userDrop" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="bi bi-person-circle me-1"></i>Hi, <?php echo htmlspecialchars($userName); ?>
+                                </button>
+                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDrop">
+                                    <li><a class="dropdown-item" href="logout.php"><i class="bi bi-box-arrow-right me-2"></i>Logout</a></li>
+                                </ul>
+                            </div>
+                        <?php else: ?>
+                            <a class="btn btn-info btn-sm rounded-pill px-4 fw-bold" href="login.php">Sign In</a>
+                        <?php endif; ?>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div style="height: 80px; background: #0a1628;"></div>
+
+    <!-- ========== CONTACT SECTION ========== -->
+    <section id="contact" class="py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="contact-card">
+                        <div class="row g-0">
+
+                            <!-- Left panel -->
+                            <div class="col-lg-5 contact-left text-white">
+                                <span
+                                    class="badge bg-white bg-opacity-25 text-white mb-3 px-3 py-2 rounded-pill small fw-semibold">Plan
+                                    Your Trip</span>
+                                <h2 class="fw-bold mb-3" style="font-family:'Playfair Display',serif;">Book Your Sri
+                                    Lanka Adventure</h2>
+                                <p class="mb-4" style="color:rgba(255,255,255,0.78);">Our local travel experts will
+                                    craft a personalised plan for you — reply within 24 hours.</p>
+
+                                <div class="d-flex flex-column gap-3 mb-4">
+                                    <div class="d-flex align-items-center gap-3">
+                                        <div class="info-icon"><i class="bi bi-envelope-fill"></i></div>
+                                        <div>
+                                            <div class="small" style="color:rgba(255,255,255,0.6);">Email</div>
+                                            <div class="fw-semibold">hello@traveladviser.lk</div>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex align-items-center gap-3">
+                                        <div class="info-icon"><i class="bi bi-telephone-fill"></i></div>
+                                        <div>
+                                            <div class="small" style="color:rgba(255,255,255,0.6);">Phone</div>
+                                            <div class="fw-semibold">+94 11 234 5678</div>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex align-items-center gap-3">
+                                        <div class="info-icon"><i class="bi bi-geo-alt-fill"></i></div>
+                                        <div>
+                                            <div class="small" style="color:rgba(255,255,255,0.6);">Office</div>
+                                            <div class="fw-semibold">Colombo 03, Sri Lanka</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="d-flex gap-2">
+                                    <a href="#" class="social-btn"><i class="bi bi-facebook"></i></a>
+                                    <a href="#" class="social-btn"><i class="bi bi-instagram"></i></a>
+                                    <a href="#" class="social-btn"><i class="bi bi-twitter-x"></i></a>
+                                    <a href="#" class="social-btn"><i class="bi bi-youtube"></i></a>
+                                </div>
+                            </div>
+
+                            <!-- Right form -->
+                            <div class="col-lg-7 contact-right">
+                                <h4 class="fw-bold mb-4">Send Us a Message</h4>
+
+                                <!-- Success message -->
+                                <div id="successMsg" class="alert alert-success d-none mb-3">
+                                    <i class="bi bi-check-circle-fill me-2"></i>
+                                    <strong>Message sent!</strong> We'll reply within 24 hours.
+                                </div>
+
+                                <form id="contactForm" novalidate>
+                                    <div class="row g-3">
+
+                                        <div class="col-md-6">
+                                            <label class="form-lbl">Full Name *</label>
+                                            <input type="text" id="fName" class="f-input"
+                                                placeholder="Your full name" />
+                                            <p class="err-msg" id="eNm">Please enter your name (min 3 characters).</p>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <label class="form-lbl">Email Address *</label>
+                                            <input type="email" id="fEmail" class="f-input"
+                                                placeholder="you@example.com" />
+                                            <p class="err-msg" id="eEm">Please enter a valid email address.</p>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <label class="form-lbl">Phone Number</label>
+                                            <input type="tel" id="fPhone" class="f-input"
+                                                placeholder="+94 71 000 0000" />
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <label class="form-lbl">Destination *</label>
+                                            <select id="fDest" class="f-input">
+                                                <option value="">Select a destination</option>
+                                                <option>Sigiriya</option>
+                                                <option>Kandy</option>
+                                                <option>Ella</option>
+                                                <option>Galle Fort</option>
+                                                <option>Trincomalee</option>
+                                                <option>Yala National Park</option>
+                                                <option>Full Island Tour</option>
+                                            </select>
+                                            <p class="err-msg" id="eDe">Please select a destination.</p>
+                                        </div>
+
+                                        <div class="col-12">
+                                            <label class="form-lbl">Travel Date *</label>
+                                            <input type="date" id="fDate" class="f-input" />
+                                            <p class="err-msg" id="eDt">Please select a future travel date.</p>
+                                        </div>
+
+                                        <div class="col-12">
+                                            <label class="form-lbl">Message *</label>
+                                            <textarea id="fMsg" class="f-input" rows="4"
+                                                placeholder="Tell us about your travel plans…"></textarea>
+                                            <p class="err-msg" id="eMg">Please enter a message (min 10 characters).</p>
+                                        </div>
+
+                                        <div class="col-12">
+                                            <button type="submit" class="btn-submit" id="submitBtn">
+                                                <i class="bi bi-send-fill me-2"></i>Send Message
+                                            </button>
+                                        </div>
+
+                                    </div>
+                                </form>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== NEWSLETTER SECTION ========== -->
+    <section class="py-5 bg-white border-top">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6 text-center">
+                    <h3 class="fw-bold mb-3">Subscribe to Our Newsletter</h3>
+                    <p class="text-muted mb-4">Get the latest travel tips and exclusive offers directly in your inbox.
+                    </p>
+                    <div class="input-group mb-3">
+                        <input type="email" id="nlEmail" class="f-input" placeholder="Enter your email address"
+                            style="border-radius: 50px 0 0 50px;">
+                        <button class="btn btn-blue px-4" type="button" onclick="doSubscribe()"
+                            style="border-radius: 0 50px 50px 0; font-weight: 700;">Subscribe</button>
+                    </div>
+                    <div id="nlMsg" style="font-size:0.85rem; font-weight: 600;"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+
+    <footer class="py-5">
+        <div class="container text-center">
+            <p>&copy; 2026 <strong>Travel Adviser Sri Lanka</strong>. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const name = document.getElementById('fName');
+            const email = document.getElementById('fEmail');
+            const dest = document.getElementById('fDest');
+            const date = document.getElementById('fDate');
+            const msg = document.getElementById('fMsg');
+            let valid = true;
+
+            function setError(field, errId) {
+                field.classList.add('error');
+                document.getElementById(errId).classList.add('show');
+            }
+            function setOk(field, errId) {
+                field.classList.remove('error');
+                document.getElementById(errId).classList.remove('show');
+            }
+
+            if (name.value.trim().length < 3) { setError(name, 'eNm'); valid = false; } else { setOk(name, 'eNm'); }
+            const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim());
+            if (!emailOk) { setError(email, 'eEm'); valid = false; } else { setOk(email, 'eEm'); }
+            if (!dest.value) { setError(dest, 'eDe'); valid = false; } else { setOk(dest, 'eDe'); }
+            const today = new Date(); today.setHours(0, 0, 0, 0);
+            if (!date.value || new Date(date.value) < today) { setError(date, 'eDt'); valid = false; } else { setOk(date, 'eDt'); }
+            if (msg.value.trim().length < 10) { setError(msg, 'eMg'); valid = false; } else { setOk(msg, 'eMg'); }
+
+            if (valid) {
+                const btn = document.getElementById('submitBtn');
+                const suc = document.getElementById('successMsg');
+                
+                const formData = new FormData();
+                formData.append('name', name.value.trim());
+                formData.append('email', email.value.trim());
+                formData.append('phone', document.getElementById('fPhone').value.trim());
+                formData.append('destination', dest.value);
+                formData.append('travelDate', date.value);
+                formData.append('message', msg.value.trim());
+
+                btn.disabled = true;
+                btn.innerHTML = '<span class="spinner-border spinner-border-sm me-2"></span>Sending...';
+
+                fetch('contact_process.php', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.status === 'success') {
+                        suc.classList.remove('d-none');
+                        btn.innerHTML = 'Sent!';
+                        setTimeout(() => {
+                            document.getElementById('contactForm').reset();
+                            suc.classList.add('d-none');
+                            btn.disabled = false;
+                            btn.innerHTML = 'Send Message';
+                        }, 3000);
+                    } else {
+                        alert('Error: ' + data.message);
+                        btn.disabled = false;
+                        btn.innerHTML = 'Send Message';
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    btn.disabled = false;
+                    btn.innerHTML = 'Send Message';
+                });
+            }
+        });
+
+        function doSubscribe() {
+            const input = document.getElementById('nlEmail');
+            const msg = document.getElementById('nlMsg');
+            const ok = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(input.value.trim());
+
+            if (!ok) {
+                msg.innerHTML = '<i class="bi bi-exclamation-circle me-1"></i>Please enter a valid email.';
+                msg.style.color = '#ef4444';
+            } else {
+                msg.innerHTML = '<i class="bi bi-check-circle me-1"></i>Subscribed successfully!';
+                msg.style.color = '#10b981';
+                input.value = '';
+                setTimeout(() => { msg.innerHTML = ''; }, 3000);
+            }
+        }
+    </script>
+</body>
+
+</html>
